@@ -40,13 +40,6 @@ def load_chromosome_mappings(file_path: str) -> Dict[str, str]:
 def remap_chromosome_in_line(line: str, mapping_dict: Dict[str, str]) -> str:
     """
     Remap chromosome name in the given line using the provided mapping dictionary.
-    
-    Args:
-    line (str): A line from the genomic data.
-    mapping_dict (Dict[str, str]): A dictionary for chromosome name mapping.
-
-    Returns:
-    str: The line with remapped chromosome name.
     """
     if line.startswith('@SQ'):
         for original, remapped in mapping_dict.items():
@@ -57,9 +50,6 @@ def remap_chromosome_in_line(line: str, mapping_dict: Dict[str, str]) -> str:
 def process_genomic_data(mapping_file: str):
     """
     Process each line of the input file and remap chromosome names.
-    
-    Args:
-    mapping_file (str): Path to the chromosome mapping file.
     """
     chromosome_mapping = load_chromosome_mappings(mapping_file)
     for header_line in sys.stdin:
