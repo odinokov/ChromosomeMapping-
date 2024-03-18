@@ -2,8 +2,7 @@
 """
 Chromosome Mapping Script
 
-This script remaps chromosome names in genomic data based on a provided mapping file.
-It reads genomic data lines from standard input and prints the remapped lines to standard output.
+This script remaps chromosome names in the BAM file header based on a provided mapping file.
 
 Usage:
     1) get mapping files: git clone https://github.com/dpryan79/ChromosomeMappings
