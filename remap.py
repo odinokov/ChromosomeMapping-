@@ -69,7 +69,7 @@ def process_genomic_data(mapping_file: str):
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         script_name = os.path.basename(__file__)
-        print("Incorrect usage. Please read the file header.", file=sys.stderr)
+        print("Incorrect usage.", file=sys.stderr)
         sys.exit(1)
 
     chromosome_mapping_file = sys.argv[1]
