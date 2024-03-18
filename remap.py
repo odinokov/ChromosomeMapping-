@@ -19,8 +19,7 @@ from typing import Dict
 def load_chromosome_mappings(file_path: str) -> Dict[str, str]:
     """
     Load chromosome mappings from a file into a dictionary.
-    If a chromosome name from the input data does not have a corresponding mapping in the file,
-    the script will retain the original chromosome name.
+    Retain the mapping key as a value if the mapping value is absent.
     """
     mapping = {}
     try:
