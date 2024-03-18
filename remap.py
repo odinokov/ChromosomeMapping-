@@ -41,7 +41,7 @@ def remap_chromosome_in_line(line: str, mapping_dict: Dict[str, str]) -> str:
     """
     if line.startswith('@SQ'):
         for original, remapped in mapping_dict.items():
-            if f'SN:{original}' in line:
+            if f'\tSN:{original}\t' in line:
                 return line.replace(f'\tSN:{original}\t', f'\tSN:{remapped}\t')
     return line
 
