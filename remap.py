@@ -35,7 +35,6 @@ def load_chromosome_mappings(file_path: str) -> Dict[str, str]:
     except OSError as e:
         print(f"Error reading file: {e}", file=sys.stderr)
         sys.exit(1)
-
     return mapping
 
 def remap_chromosome_in_line(line: str, mapping_dict: Dict[str, str]) -> str:
