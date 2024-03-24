@@ -37,7 +37,7 @@ def load_chromosome_mappings(file_path: str) -> Dict[str, str]:
 
 def remap_chromosome_in_line(line: str, mapping_dict: Dict[str, str]) -> str:
     """
-    Remap chromosome name in the given line using the provided mapping dictionary if possible.
+    Remap chromosome name in the given line using the provided mapping dictionary.
     """
     if line.startswith('@SQ'):
         for original, remapped in mapping_dict.items():
