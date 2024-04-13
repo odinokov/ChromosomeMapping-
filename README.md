@@ -1,7 +1,7 @@
 # Chromosome ReMapping Script
 
 ## Overview
-This script enables the remapping of chromosome and contig names within the headers of BAM files.
+This script enables the remapping of chromosome and contig names in the headers of BAM files.
 
 ## Prerequisites
 To use this script, ensure you have the following:
