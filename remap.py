@@ -1,6 +1,6 @@
 ##!/usr/bin/env python3
 """
-Chromosome Mapping Script
+Chromosome ReMapping Script
 
 This script remaps chromosome names in the BAM file header based on a provided mapping file.
 
