@@ -1,4 +1,4 @@
-# Chromosome Mapping Script
+# Chromosome ReMapping Script
 
 ## Overview
 This script enables the remapping of chromosome and contig names within the headers of BAM files.
