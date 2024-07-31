@@ -5,7 +5,7 @@ Chromosome ReMapping Script
 This script remaps chromosome names in the BAM file header based on a provided mapping file.
 
 Usage:
-    1) get mapping files: git clone https://github.com/dpryan79/ChromosomeMappings
+    1) get mapping files (chromosome/contig name mappings between UCSC <-> Ensembl <-> Gencode for a variety of genomes): git clone https://github.com/dpryan79/ChromosomeMappings
     2) remap chromosomes: samtools view -H "$in_bam" | python remap.py "$mapping_file" | samtools reheader - "$in_bam" > "$out_bam"
     
 Where:
