@@ -16,6 +16,7 @@ import sys
 import os
 from typing import Dict
 
+
 def load_chromosome_mappings(file_path: str) -> Dict[str, str]:
     """
     Load chromosome mappings from a file into a dictionary.
@@ -23,9 +24,9 @@ def load_chromosome_mappings(file_path: str) -> Dict[str, str]:
     """
     mapping = {}
     try:
-        with open(file_path, 'r') as file:
+        with open(file_path, "r") as file:
             for line in file:
-                original, *mapped = line.strip().split('\t')
+                original, *mapped = line.strip().split("\t")
                 mapping[original] = mapped[0] if mapped else original
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.", file=sys.stderr)
@@ -35,15 +36,17 @@ def load_chromosome_mappings(file_path: str) -> Dict[str, str]:
         sys.exit(1)
     return mapping
 
+
 def remap_chromosome_in_line(line: str, mapping_dict: Dict[str, str]) -> str:
     """
     Remap chromosome name in the given line using the provided mapping dictionary.
     """
-    if line.startswith('@SQ'):
+    if line.startswith("@SQ"):
         for original, remapped in mapping_dict.items():
-            if f'\tSN:{original}\t' in line:
-                return line.replace(f'\tSN:{original}\t', f'\tSN:{remapped}\t')
+            if f"\tSN:{original}\t" in line:
+                return line.replace(f"\tSN:{original}\t", f"\tSN:{remapped}\t")
     return line
+
 
 def process_genomic_data(mapping_file: str):
     """
@@ -52,6 +55,7 @@ def process_genomic_data(mapping_file: str):
     chromosome_mapping = load_chromosome_mappings(mapping_file)
     for header_line in sys.stdin:
         print(remap_chromosome_in_line(header_line.strip(), chromosome_mapping))
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
